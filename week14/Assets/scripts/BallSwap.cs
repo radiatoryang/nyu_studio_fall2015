@@ -4,6 +4,7 @@ using System.Collections;
 public class BallSwap : MonoBehaviour {
 
 	public Transform ball1, ball2; // assign in inspector
+	public ScreenShake shakeGod;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class BallSwap : MonoBehaviour {
 				if ( t > 0.45f && t < 0.55f && didIPlayTheSoundAlready == false) {
 					Debug.Log ("play the sound!");
 					GetComponent<AudioSource>().Play (); // play bump sound
+					shakeGod.DoScreenShake(); // shake the screen
 					didIPlayTheSoundAlready = true;
 				}
 				yield return 0; // wait a frame
